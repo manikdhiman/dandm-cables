@@ -1,26 +1,9 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  /* This is where we define the premium look from your design image */
+  --color-brand-navy: #0B2545;   /* Deep blue for backgrounds & headings */
+  --color-brand-teal: #00A8CC;   /* Accent cyan/teal for buttons */
+  --color-brand-ice: #F4F7F6;    /* Light background panels */
+  --color-brand-gray: #6B7280;   /* Description text */
 }
