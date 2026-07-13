@@ -1,5 +1,6 @@
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar"; // The '@' symbol points directly to the 'src' directory!
+// 👇 ADD THIS IMPORT STATEMENT AT THE TOP 👇
+import Navbar from "@/components/layout/Navbar"; 
 
 export const metadata = {
   title: "D & M Cables | Premium Manufacturing",
@@ -8,12 +9,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased font-sans">
-        {/* We place the Navbar here so it stays fixed on top of every page */}
+        {/* Now that it is imported above, this will work perfectly! */}
         <Navbar />
         
-        {/* 'children' represents whatever page you are currently viewing */}
         <div className="pt-20"> 
           {children}
         </div>
