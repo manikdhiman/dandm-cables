@@ -1,24 +1,25 @@
 import Link from 'next/link';
+import Image from 'next/image'; // Importing Next.js optimized Image loader
 
 export default function ProductsGrid() {
   const categories = [
     {
       title: "Aluminium Wire Rods",
       desc: "High-purity EC grade and Alloy rods manufactured for optimal conductivity and drawing applications.",
-      icon: "⭕",
-      specs: ["EC Grade (99.7%)", "Alloy 6201 / 1350", "9.5mm / 12mm diameters"]
+      image: "/products/wire-rods.jpg", // Path pointing directly to the public folder
+      specs: ["EC Grade (99.7%)", "Alloy 6201 / 1350", "9.5mm / 12mm"]
     },
     {
       title: "Overhead Conductors",
       desc: "ACSR, AAC, and AAAC configurations engineered to withstand high mechanical tension and environmental stress.",
-      icon: "⚡",
-      specs: ["ACSR (Rabbit/Dog/Panther)", "All Aluminium Alloy (AAAC)", "IS-398 Certified"]
+      image: "/products/conductors.jpg",
+      specs: ["ACSR (Rabbit/Dog)", "AAAC Alloy", "IS-398 Certified"]
     },
     {
       title: "Power & AB Cables",
       desc: "Aerial Bunched Cables and XLPE insulated low voltage lines designed for safe, anti-theft power distribution.",
-      icon: "🔌",
-      specs: ["XLPE / PVC Insulation", "Anti-Theft AB Designs", "Industrial & Rural Grids"]
+      image: "/products/cables.jpg",
+      specs: ["XLPE / PVC Insulation", "Anti-Theft AB", "Rural & Urban Grids"]
     }
   ];
 
@@ -42,28 +43,38 @@ export default function ProductsGrid() {
         {categories.map((item, index) => (
           <div 
             key={index} 
-            className="bg-white p-8 rounded-2xl border border-gray-100 hover:border-brand-teal/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+            className="bg-white rounded-2xl border border-gray-100 hover:border-brand-teal/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
           >
-            <div>
-              <div className="w-12 h-12 rounded-xl bg-brand-ice flex items-center justify-center text-xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition-colors duration-300">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
-              <p className="text-sm text-brand-gray leading-relaxed mb-6">{item.desc}</p>
-              
-              {/* Core Spec Pill Tags */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {item.specs.map((spec, sIdx) => (
-                  <span key={sIdx} className="text-xs font-medium bg-brand-ice/70 text-brand-navy/80 px-2.5 py-1 rounded-md">
-                    {spec}
-                  </span>
-                ))}
-              </div>
+            {/* 📸 NEW: Top Cover Image Slot */}
+            <div className="relative w-full h-48 bg-slate-100 overflow-hidden">
+              <Image 
+                src={item.image}
+                alt={item.title}
+                fill // Makes the image completely fill its parent container box
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
 
-            <Link href={`/products`} className="text-xs font-bold uppercase tracking-wider text-brand-teal group-hover:text-brand-navy transition mt-auto block">
-              Technical Specifications →
-            </Link>
+            {/* Content Area (With Padding inside the card) */}
+            <div className="p-6 flex flex-col flex-grow justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-brand-navy mb-2">{item.title}</h3>
+                <p className="text-sm text-brand-gray leading-relaxed mb-4">{item.desc}</p>
+                
+                {/* Core Spec Pill Tags */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {item.specs.map((spec, sIdx) => (
+                    <span key={sIdx} className="text-xs font-medium bg-brand-ice/70 text-brand-navy/80 px-2.5 py-1 rounded-md">
+                      {spec}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <Link href={`/products`} className="text-xs font-bold uppercase tracking-wider text-brand-teal group-hover:text-brand-navy transition mt-auto block">
+                Technical Specifications →
+              </Link>
+            </div>
           </div>
         ))}
       </div>

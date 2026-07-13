@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import QuickStats from "@/components/sections/QuickStats";
 import ProductsGrid from "@/components/sections/ProductsGrid";
 import ValueProp from "@/components/sections/ValueProp";
+import BrandTrust from "@/components/sections/BrandTrust";
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       <Hero />
       <QuickStats />
       <ProductsGrid />
-      <ValueProp/>
+      <ValueProp />
+      <BrandTrust />
     </main>
   );
 }
