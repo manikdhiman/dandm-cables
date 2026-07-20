@@ -17,7 +17,7 @@ export default function CablesPage() {
     { 
       title: "LT XLPE Power Cables", 
       slug: "lt-xlpe-power", 
-      imageSrc: "/products/lt-xlpe-power.webp", 
+      imageSrc: "/products/lt-xlpe-cables.webp", // Fixed filename here!
       desc: "Cross-linked Polyethylene insulated cables offering superior thermal withstand capacity and high dielectric strength." 
     },
   ];

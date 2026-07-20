@@ -1,22 +1,21 @@
 import "./globals.css";
-// 👇 ADD THIS IMPORT STATEMENT AT THE TOP 👇
-import Navbar from "@/components/layout/Navbar"; 
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "D & M Cables | Premium Manufacturing",
-  description: "Leading manufacturer of Aluminium Ingots, Wire Rods, and Conductors.",
+  title: "D and M Cables Pvt. Ltd. | Energy Infrastructure",
+  description: "Manufacturing premium quality aluminium rods, conductors, and power cable solutions.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased font-sans">
-        {/* Now that it is imported above, this will work perfectly! */}
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-white text-brand-navy antialiased min-h-screen w-screen overflow-x-hidden m-0 p-0 block">
         <Navbar />
-        
-        <div className="pt-20"> 
+        <div className="w-full">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

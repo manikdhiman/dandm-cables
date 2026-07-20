@@ -6,7 +6,7 @@ import BrandTrust from "@/components/sections/BrandTrust";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-brand-ice/40 pb-20">
+    <main className="overflow-x-hidden w-full min-h-screen">
       <Hero />
       <QuickStats />
       <ProductsGrid />

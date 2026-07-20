@@ -28,7 +28,7 @@ export const cablesData = {
   "lt-xlpe-power": {
     title: "LT XLPE Power Cables",
     category: "Power Cables",
-    imageSrc: "/products/lt-xlpe-cables.webp",
+    imageSrc: "/products/lt-xlpe-cables.webp", // Fixed filename here too!
     description: "Our Low Tension (LT) XLPE Power Cables are engineered to provide high reliability, electrical efficiency, and long service life at an economical cost. Manufactured with advanced cross-linked polyethylene (XLPE) insulation, they offer excellent dielectric strength, thermal stability, and resistance to mechanical stress and moisture.\n\nDesigned for residential, commercial, and industrial applications, these cables ensure minimal energy losses, reduced maintenance, and cost-effective performance, making them an ideal solution for modern low-voltage power distribution networks.",
     techSpecs: [
       { label: "Cable Type", value: "LT XLPE Cable" },
